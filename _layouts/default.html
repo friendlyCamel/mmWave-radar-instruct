@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'zh-CN' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{ site.description | escape }}">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {
+        equationNumbers: { autoNumber: 'AMS' }
+      },
+      SVG: {
+        linebreaks: { automatic: true }
+      }
+    });
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_SVG"></script>
+
+  {% if site.analytics.goatcounter %}
+  <script data-goatcounter="https://{{ site.analytics.goatcounter }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  {% endif %}
+  {% if site.analytics.ga4 %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.ga4 }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.analytics.ga4 }}');
+  </script>
+  {% endif %}
+</head>
+<body>
+  <header class="topbar">
+    <button class="toc-toggle" type="button" aria-label="打开目录" aria-expanded="false">目录</button>
+    <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+  </header>
+
+  <div class="page-shell">
+    <aside class="toc-panel" aria-label="文章目录">
+      <div class="toc-title">目录</div>
+      <nav id="toc"></nav>
+    </aside>
+
+    <main class="content" id="main-content">
+      {{ content }}
+    </main>
+  </div>
+
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+</body>
+</html>

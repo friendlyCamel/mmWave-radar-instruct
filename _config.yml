@@ -1,0 +1,22 @@
+title: 毫米波雷达感知知识导读
+description: 面向毫米波雷达感知入门学习的中文导读
+lang: zh-CN
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  hard_wrap: false
+
+# Analytics are optional. Fill these after registering a provider.
+# GoatCounter example:
+# analytics:
+#   goatcounter: your-code
+#
+# Google Analytics 4 example:
+# analytics:
+#   ga4: G-XXXXXXXXXX
+analytics: {}
+
+exclude:
+  - README.md
